@@ -19,7 +19,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|
-|message|text|null: false|
+|message|text|
 |user_id|references|foreign_key: true null: false|
 |group_id|references|foreign_key: true null: false|
 
@@ -33,7 +33,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false unique: true|
-|user_id|references|foreign_key: true|
 
 ### Association
 - has_many :users, through: :groups_users

@@ -1,0 +1,59 @@
+.Side_bar{
+  background-color: #2f3e51;
+  height: 100vh;
+  width: 300px;
+  display: inline-block;
+  &__user_name{
+    height: 100px;
+    width: 300px;
+    background-color: #253141;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    &__top_items{
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-size: 16px;
+      }
+      &__icons{
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        &__icon{
+          color: #ffffff;
+          margin-right: 5px;
+          text-decoration: none;
+        }
+      }
+    }
+  }  
+  &__group_list{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    width: 100%;
+    padding-top: 20px;
+    margin: 0 20px 0 0;
+    box-sizing: border-box;
+    &__group{
+      margin-bottom: 40px;
+      &__group_name{
+        font-size: 15px;
+        margin-bottom: 5px;
+        color: #ffffff;
+      }
+      &__group_message{
+        font-size: 11px;
+        color: #ffffff;
+      }
+    }
+  }
+
+}

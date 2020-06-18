@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="Main_chat__message_list__first">
+        `<div class="Main_chat__message_list__first" data-message-id=${message.id}>
           <div class="Main_chat__message_list__first__member">
             <div class="Main_chat__message_list__first__member__name">
               ${message.user_name}
@@ -21,16 +21,16 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="MessageBox">
-        <div class="MessageInfo">
-          <div class="MessageInfo__userName">
+      `<div class="Main_chat__message_list__first" data-message-id=${message.id}>
+        <div class="Main_chat__message_list__first__member">
+          <div class="Main_chat__message_list__first__member__name">
             ${message.user_name}
           </div>
-          <div class="MessageInfo__date">
+          <div class="Main_chat__message_list__first__member__time">
             ${message.created_at}
           </div>
         </div>
-        <div class="Message">
+        <div class="Main_chat__message_list__first__message">
           <p class="Message__content">
             ${message.content}
           </p>
@@ -41,7 +41,7 @@ $(function(){
   }
 
   $(".contents").on('submit', function(e){
-    e.preventDefault()
+    e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
     $.ajax({
@@ -55,12 +55,13 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $(".Main_chat__message_list").append(html);  
-      $(".submit_btn").prop("disabled", false);
-      $(".Main_chat__message_list").animate({ scrollTop: $(".Main_chat__message_list")[0].scrollHeight});    
-      $(".contents")[0].reset();
+      $('form')[0].reset();
+      $('.Main_chat__message_list').animate({ scrollTop: $('.Main_chat__message_list')[0].scrollHeight});
+      $('.submit_btn').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.submit_btn').prop("disabled", false);
+    });
   });
-  })
 });

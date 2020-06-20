@@ -40,7 +40,7 @@ $(function(){
     };
   }
 
-
+  
   let reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     let last_message_id = $('.Main_chat__message_list__first:last').data("message-id");

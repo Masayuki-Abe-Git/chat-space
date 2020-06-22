@@ -12,6 +12,8 @@
       = f.text_field :name, class: 'SettingGroupForm__input', placeholder: 'グループ名を入力してください'
   .SettingGroupForm__field
     .SettingGroupForm__leftField
+      %label.SettingGroupForm__label チャットメンバーを追加
+    .SettingGroupForm__rightField
       .UserSearch
         %input#UserSearch__field.SettingGroupForm__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}/
       #UserSearchResult

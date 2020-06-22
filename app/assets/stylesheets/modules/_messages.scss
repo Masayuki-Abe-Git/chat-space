@@ -53,6 +53,7 @@
     padding: 10px 0 0 40px;
     overflow: scroll;
     &__first{
+      margin-top: 35px;
       &__member{
         display: flex;
         &__name{
@@ -81,8 +82,8 @@
       height: 90px;
       display: flex;
       .input_content{
-        width: 100%;
-        margin: 10px 0 0 50px;
+        width: 100vw;
+        margin: 20px 0 0 50px;
         display: flex;
         position: relative;
 
@@ -109,7 +110,7 @@
         width: 100px;
         height: 50px;
         padding: 0 30px;
-        margin:  10px 0 0 15px;
+        margin:  20px 40px 0 15px;
         background-color: #38aef0;
         color: white;
         cursor: pointer;
